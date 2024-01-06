@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- basic -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- mobile metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+  <!-- site metas -->
+  <title>Gamepad</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <!-- bootstrap css -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <!-- style css -->
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <!-- Responsive-->
+  <link rel="stylesheet" href="css/responsive.css">
+  <!-- fevicon -->
+  <link rel="icon" href="images/fevicon.png" type="image/gif" />
+  <!-- Scrollbar Custom CSS -->
+  <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+  <!-- Tweaks for older IEs-->
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+  <!-- owl stylesheets -->
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css"
+    media="screen">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <style>
+    /* #signup-modal {
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.4);
+      }
+
+      .modal-content {
+        background-color: #fefefe;
+        margin: 15% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 300px;
+      }
+
+      .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      .close:hover,
+      .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+    } */
+  </style>
+</head>
+
+<body>
+  <div class="loader_bg">
+    <div class="loader"><img src="loading.gif" alt="#"></div>
+  </div>
+  <!-- header section start -->
+  <div class="header_section">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="logo"><img src="images/newLOGO.png"></div>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="input-group" style="width: 380px;">
+        <input type="text" class="form-control" placeholder="Search for products,brands and more" style="height: 40px;">
+        <span class="input-group-btn">
+          <button class="btn btn-primary" style="height: 40px;width: 50px;">
+            <span class="glyphicon glyphicon-search"></span>
+          </button>
+        </span>
+      </div>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto" style="position: relative;right: -15px;">
+          <li class="nav-item">
+            <a class="nav-link" href="index.php">HOME</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.php">ABOUT</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="product.php">OUR PRODUCTS</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="video.html">VIDEO GAMES</a>
+          </li> -->
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="remot.html">REMOT CONTROL</a>
+          </li> -->
+          <li class="nav-item">
+            <a class="nav-link" href="contact.php">CONTACT US</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="#"><img src="images/search-icon.png"></a>
+          </li> -->
+          <li class="nav-item ">
+            <!-- <button id="signup-btn">Sign Up</button> -->
+           <a class="nav-link" href="login.php">Sign Up</a>
+          </li>
+
+
+            <!-- <div id="signup-modal" class="modal modal-fade">
+              <div class="modal-dialog modal-md">
+
+                <div class="modal-content">
+                  <div class="modal-header" style="background-image: linear-gradient(to top left,blue,
+                  rgb(41, 41, 255),black 45%);">
+                    <h1 class="text-white text-center font-weight-bold " style=" font-weight: 20px; font-size: 50px;">
+                      Login</h1>
+                  </div>
+
+                  <div class="modal-body" style="height:300px">
+                    <form  method="post" action="process/register.php" onsubmit="return validation()" >
+                      <input type="text" placeholder="username" name="User" class="form-control" id="User"
+                        required
+                        style="width:80% ; height:50px ; position: relative ; left:50px ; top:40px ; background-color: rgb(247, 247, 247);">
+                      <span id="user" class="text-danger font-weight-bold" style="position: relative;
+                      top: 44px;
+                      left: 53px;"></span>
+                      <input type="password" placeholder="Password" class="form-control" name="Pass" id="Pass"
+                        style="width:80% ; height:40px ; position: relative ; left:50px  ;top:50px; background-color: rgb(247, 247, 247);">
+                      <span id="pass" class="text-danger font-weight-bold" style="position: relative;
+                      top: 58px;left: 50px;"></span>
+
+                      <div class="text-center" style="position: relative;top:70px">
+                        <button type="submit"  name="login" class="btn btn-info" style="width: 80%;">Login</button>
+                      </div>
+                    </form>
+                    <a href="sign-up.php" target="_self" class="text-center"
+                      style="position: relative;top:100px;left:100px">Don't
+                      have an
+                      account?Create a
+                      Account</a>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Exit</button>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+      </div>
+      <script>
+        function validation() {
+          var User = document.getElementById('User').value;
+          var Pass = document.getElementById('Pass').value;
+
+          if (User == "") {
+            document.getElementById('user').innerHTML = "Please fill the username field";
+            return false;
+          }
+          if ((User.length <= 2) || (User.length >= 20)) {
+            document.getElementById('user').innerHTML = " ** Username length must be between 2 and 20";
+            return false;
+          }
+
+          if (!isNaN(User)) {
+            document.getElementById('user').innerHTML = " ** only characters are allowed";
+            return false;
+          }
+          if (Pass == "") {
+            document.getElementById('pass').innerHTML = " ** Please fill the password field";
+            return false;
+          }
+
+          if ((Pass.length <= 5) || (Pass.length >= 20)) {
+            document.getElementById('pass').innerHTML = " ** Password length must be between 5 and 20";
+            return false;
+          }
+
+        }
+      </script>
+      <script src="script.js"></script>
+      </li>
+      <!-- <li class="nav-item">
+            <a class="nav-link" href="#">REGISTER</a>
+          </li> -->
+      </ul>
+  </div>
+  </nav>
+  </div>
+  <!-- header section end -->
+  <!-- banner section start -->
+  <div class="banner_section layout_padding" style="position: relative; top: -23px;">
+    <div class="container">
+      <div id="my_slider" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="row">
+              <div class="col-md-6">
+                <h1 class="video_text">Video games</h1>
+                <h1 class="controller_text">controller</h1>
+                <p class="banner_text">1. Extensive PC game support <br>2. Supports Steam Big Picture for gaming and
+                  more on your TV <br>3. Familiar console-style layout <br>4. Works with Android TV</p>
+                <div class="shop_bt"><a
+                    href="https://www.amazon.in/Logitech-F310-Gamepad-Cable-Connection/dp/B003VAHYQY/ref=sr_1_10?adgrpid=67760858332&ext_vrnc=hi&hvadid=398059831912&hvdev=c&hvlocphy=9040235&hvnetw=g&hvqmt=b&hvrand=15280424729710071945&hvtargid=kwd-309443929863&hydadcr=24566_1971421&keywords=gamepad%2Bcontroller&qid=1687836739&sr=8-10&th=1"
+                    target="_blank">Shop Now</a></div>
+              </div>
+              <div class="col-md-6">
+                <div class="image_1"><img src="images/g1.png" style="width: 440px;"></div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="row">
+              <div class="col-md-6">
+                <h1 class="video_text">Video games</h1>
+                <h1 class="controller_text">controller</h1>
+                <p class="banner_text"> 1. Gamepad comes equipped with2.4GHz wireless technology<br>2. The built-in
+                  lithium-ion battery <br>3. Integrated dual intensity motor <br>4. Integrated force feedback </p>
+                <div class="shop_bt"><a href="#">Shop Now</a></div>
+              </div>
+              <div class="col-md-6">
+                <div class="image_1"><img src="images/g2.png" style="width: 440px;"></div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="row">
+              <div class="col-md-6">
+                <h1 class="video_text">Video games</h1>
+                <h1 class="controller_text">controller</h1>
+                <p class="banner_text">1. Android TV Controller <br>2. The EvoFox Elite Ops Wireless Gamepad is the
+                  Ideal Casual Gamepad for Android TVs, PC with X Input Mode and PS3s <br>3. Stable 2.4Ghz Wireless
+                  Connectivity <br>4. Comfortable & Ergonomic Grip for Smooth In-Game Experience</p>
+                <div class="shop_bt"><a
+                    href="https://www.amazon.in/Wireless-Gamepad-Android-Charging-Vibration/dp/B09F9CL2Y2/ref=sr_1_1_sspa?keywords=f310+logitech+gamepad&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1"
+                    target="_blank">Shop Now</a></div>
+              </div>
+              <div class="col-md-6">
+                <div class="image_1"><img src="images/g3.png" style="width: 440px;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#my_slider" role="button" data-slide="prev">
+          <i class="fa fa-angle-left"></i>
+        </a>
+        <a class="carousel-control-next" href="#my_slider" role="button" data-slide="next">
+          <i class="fa fa-angle-right"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+  <!-- banner section end -->
+  <!-- about section start -->
+  <div class="about_section layout_padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="image_2"><img src="images/g4.png"></div>
+        </div>
+        <div class="col-md-6">
+          <h1 class="about_text">ABOUT</h1>
+          <p class="lorem_text">You can play enhanced Nintendo 64™ games the way they're meant to be played—using a
+            full-size Nintendo 64 style controller!* This controller is the perfect way to explore 3D worlds that
+            debuted on the Nintendo 64 system. It even includes built-in rumble functionality for compatible games!
+            Controller available for purchase by any Nintendo Switch Online members. Nintendo 64 – Nintendo Switch
+            Online library of games only available with Nintendo Switch Online + Expansion Pack membership.</p>
+          <div class="shop_bt_2"><a href="https://www.nintendo.com/store/products/nintendo-64-controller/"
+              target="_blank">Shop Now</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- cards -->
+  <div class="container">
+    <div class="product_text">Our <span style="color: #5ca0e9;">products</span></div>
+  </div>
+  <div class="container-fluid bg-trasparent my-4 p-3" style="position: relative;">
+    <div class="row row-cols-1 row-cols-xs-2 row-cols-sm-2 row-cols-lg-4 g-3">
+
+      <!-- card 1 -->
+      <div class="col">
+        <div class="card h-100 shadow-sm"> <img
+            src="https://www.reliancedigital.in/medias/Sony-CFI-ZCT1WRU-Gaming-Accessories-491936182-i-1-1200Wx1200H?context=bWFzdGVyfGltYWdlc3wxMzY3NDV8aW1hZ2UvanBlZ3xpbWFnZXMvaDBkL2hjNi85NDU0MDEyOTg5NDcwLmpwZ3wzZjZiYmQ1ZTM2Mjk1N2MyNTU4ZDhhMmRhODc4MjIyMzJjZGYyMTBkMzU3YTdmMTFkYmQzZWFkMGMwYWFjNjM0"
+            class="card-img-top" alt="..." style="padding: 0px;">
+          <div class="card-body">
+            <div class="clearfix mb-3"> <span class="float-end price-hp" style="font-size: 30px;">₹5,990.00</span>
+            </div>
+            <h4 class="card-title">Sony PS5 DualSense
+              Wireless Controller</h4>
+            <div class="text-center my-4"> <a href="#" class="btn btn-warning">Buy Now</a> </div>
+          </div>
+          <div class="card-footer text-center " style="padding: 0px;">
+            <div class="btn-group" style="width:100%">
+              <button class="btn btn-md" type="button" style="width:50%"><input type="checkbox"> Compare</button>
+              <button class="btn btn-md" type="button" style="width:50%"
+                onclick="document.getElementById('heart') .style.color='red'">
+                <i class="fa fa-heart fa-1px" id="heart" style="padding: 0px 5px;"></i> Wishlist</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- card 2 -->
+      <div class="col">
+        <div class="card h-100 shadow-sm"> <img
+            src="https://www.reliancedigital.in/medias/Redgear-ELITE-V2-WIRELESS-GAMINGACCESSORY-492579185-i-1-1200Wx1200H?context=bWFzdGVyfGltYWdlc3wxMTI3MjB8aW1hZ2UvanBlZ3xpbWFnZXMvaDNhL2hmNC85NzM2NzczNzk1ODcwLmpwZ3w0NjE0MjhmMTVlMmFjNjJhYmM0Y2U1NTU4YmQ3N2Y5YTcxMDA3YjYxMDdmOTc5MjgwODY0ZTRkMjcyYTU5ZTg2"
+            class="card-img-top" alt="..." style="padding: 0px;">
+          <div class="card-body">
+            <div class="clearfix mb-3"> <span class="float-end price-hp" style="font-size: 30px;">
+                ₹1,049.00</span>
+            </div>
+            <h4 class="card-title">
+              Redgear Elite v2 Wireless Gamepad, Black</h4>
+            <div class="text-center my-4"> <a href="#" class="btn btn-warning">Buy Now</a> </div>
+          </div>
+          <div class="card-footer text-center " style="padding: 0px;">
+            <div class="btn-group" style="width:100%">
+              <button class="btn btn-md" type="button" style="width:50%"><input type="checkbox"> Compare</button>
+              <button class="btn btn-md" type="button" style="width:50%"
+                onclick="document.getElementById('heart') .style.color='red'">
+                <i class="fa fa-heart fa-1px" id="heart" style="padding: 0px 5px;"></i> Wishlist</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- card 3 -->
+      <div class="col">
+        <div class="card h-100 shadow-sm"> <img
+            src="https://www.reliancedigital.in/medias/Microsoft-Xbox-1V8-00006-Gaming-Controller-492166138-i-1-1200Wx1200H?context=bWFzdGVyfGltYWdlc3wxOTAwMjF8aW1hZ2UvanBlZ3xpbWFnZXMvaDE1L2gyOC85NjI4NjI2OTExMjYyLmpwZ3xjNTFhMmZiN2FkMGQ2MTc0NzljN2Y5ZDhmNTZmMDVlMjM0MDJmMzE2MzEzY2FlOTA5NjhhZDlhMWQwMjBiMTQ2"
+            style="    width: 180px; position: relative; left: 80px;">
+          <div class="card-body">
+            <div class="clearfix mb-3"> <span class="float-end price-hp" style="font-size: 30px;">
+                ₹5,390.00</span>
+            </div>
+            <h4 class="card-title">
+              Microsoft X-Box Series X/S Wireless Controller with USB-C Cable, Carbon Black</h4>
+            <div class="text-center my-4"> <a href="#" class="btn btn-warning">Buy Now</a> </div>
+          </div>
+          <div class="card-footer text-center " style="padding: 0px;">
+            <div class="btn-group" style="width:100%">
+              <button class="btn btn-md" type="button" style="width:50%"><input type="checkbox"> Compare</button>
+              <button class="btn btn-md" type="button" style="width:50%"
+                onclick="document.getElementById('heart') .style.color='red'">
+                <i class="fa fa-heart fa-1px" id="heart" style="padding: 0px 5px;"></i> Wishlist</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+
+  <div class="container-fluid bg-trasparent my-4 p-3" style="position: relative;">
+    <div class="row row-cols-1 row-cols-xs-2 row-cols-sm-2 row-cols-lg-4 g-3">
+
+      <!-- card 1 -->
+      <div class="col">
+        <div class="card h-100 shadow-sm"> <img
+            src="https://www.reliancedigital.in/medias/Microsoft-QAS-00006-Gaming-Accessories-491936075-i-1-1200Wx1200H?context=bWFzdGVyfGltYWdlc3wxOTgxNjZ8aW1hZ2UvanBlZ3xpbWFnZXMvaDExL2hiMy85NDIwNTYzOTcyMTI2LmpwZ3wyY2M5ZDVhZWViZDUyMjZhN2ZiYzYzMDdhNWM4YzMwMDY0MWRmODdmMzRkMzExODI4MGNlNDg2ZDJmMzM2Yzg4"
+            class="card-img-top" alt="..." style="padding: 0px;">
+          <div class="card-body">
+            <div class="clearfix mb-3"> <span class="float-end price-hp" style="font-size: 30px;">
+                ₹5,390.00</span>
+            </div>
+            <h4 class="card-title">Microsoft Xbox Wireless Controller - Robot White</h4>
+            <div class="text-center my-4"> <a href="#" class="btn btn-warning">Buy Now</a> </div>
+          </div>
+          <div class="card-footer text-center " style="padding: 0px;">
+            <div class="btn-group" style="width:100%">
+              <button class="btn btn-md" type="button" style="width:50%"><input type="checkbox"> Compare</button>
+              <button class="btn btn-md" type="button" style="width:50%"
+                onclick="document.getElementById('heart') .style.color='red'">
+                <i class="fa fa-heart fa-1px" id="heart" style="padding: 0px 5px;"></i> Wishlist</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- card 2 -->
+      <div class="col">
+        <div class="card h-100 shadow-sm"> <img
+            src="https://www.reliancedigital.in/medias/Microsoft-QAT-00006-Gaming-Accessories-491936076-i-1-1200Wx1200H?context=bWFzdGVyfGltYWdlc3wyMTQwOTF8aW1hZ2UvanBlZ3xpbWFnZXMvaDAzL2hhMi85NDIwNTY0Mjk5ODA2LmpwZ3w1MmNmMGMxMTdlMzkyN2JmNGJiYjI2ODc5NTZkYTQ0MzVmODA4ODExYTc0ODY0NGEzMjlkZDEzNmZjM2MxNTUw"
+            class="card-img-top" alt="..." style="padding: 0px;">
+          <div class="card-body">
+            <div class="clearfix mb-3"> <span class="float-end price-hp" style="font-size: 30px;">
+                ₹5,390.00</span>
+            </div>
+            <h4 class="card-title">
+              Microsoft Xbox Wireless Controller - Carbon Black</h4>
+            <div class="text-center my-4"> <a href="#" class="btn btn-warning">Buy Now</a> </div>
+          </div>
+          <div class="card-footer text-center " style="padding: 0px;">
+            <div class="btn-group" style="width:100%">
+              <button class="btn btn-md" type="button" style="width:50%"><input type="checkbox"> Compare</button>
+              <button class="btn btn-md" type="button" style="width:50%"
+                onclick="document.getElementById('heart') .style.color='red'">
+                <i class="fa fa-heart fa-1px" id="heart" style="padding: 0px 5px;"></i> Wishlist</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- card 3 -->
+      <div class="col">
+        <div class="card h-100 shadow-sm"> <img
+            src="https://www.reliancedigital.in/medias/Microsoft-QAU-00006-Gaming-Accessories-491936077-i-1-1200Wx1200H?context=bWFzdGVyfGltYWdlc3wyNjU1MzZ8aW1hZ2UvanBlZ3xpbWFnZXMvaGRlL2g0Ni85NDIwNTY0NjI3NDg2LmpwZ3xjYWVhODJjZGI4NmE3YzU2NzRhYTM3NGNmY2E1ZDM1ZTU1MDVjZTQ0NzVmNzlmMGEyMWJlZTdkYWQwMzBlNmNj"
+            style="    width: 180px; position: relative; left: 80px;">
+          <div class="card-body">
+            <div class="clearfix mb-3"> <span class="float-end price-hp" style="font-size: 30px;">
+                ₹5,890.00</span>
+            </div>
+            <h4 class="card-title">
+              Microsoft Xbox Wireless Controller - Shock Blues</h4>
+            <div class="text-center my-4"> <a href="#" class="btn btn-warning">Buy Now</a> </div>
+          </div>
+          <div class="card-footer text-center " style="padding: 0px;">
+            <div class="btn-group" style="width:100%">
+              <button class="btn btn-md" type="button" style="width:50%"><input type="checkbox"> Compare</button>
+              <button class="btn btn-md" type="button" style="width:50%"
+                onclick="document.getElementById('heart') .style.color='red'">
+                <i class="fa fa-heart fa-1px" id="heart" style="padding: 0px 5px;"></i> Wishlist</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+
+  <div class="container-fluid bg-trasparent my-4 p-3" style="position: relative;">
+    <div class="row row-cols-1 row-cols-xs-2 row-cols-sm-2 row-cols-lg-4 g-3">
+
+      <!-- card 1 -->
+      <div class="col">
+        <div class="card h-100 shadow-sm"> <img
+            src="https://www.reliancedigital.in/medias/Microsoft-XBOX-Wireless-Controller-492338474-i-1-1200Wx1200H?context=bWFzdGVyfGltYWdlc3w4MDM4NHxpbWFnZS9qcGVnfGltYWdlcy9oNGEvaDc2Lzk2MjgxNDM3MTQzMzQuanBnfDhiNTAwYTcxYTU2MzRlZWMyZTRjOThjZGUwYjg3YjJjNmQ1NGY1YjdkZDIzNzEwYzIxY2YzNGUxMTlkODk4NTQ"
+            class="card-img-top" alt="..." style="padding: 0px;">
+          <div class="card-body">
+            <div class="clearfix mb-3"> <span class="float-end price-hp" style="font-size: 30px;">
+                ₹5,890.00</span>
+            </div>
+            <h4 class="card-title">
+              Microsoft XBOX Wireless Controller with Dedicated Share Button, Electric Volt</h4>
+            <div class="text-center my-4"> <a href="#" class="btn btn-warning">Buy Now</a> </div>
+          </div>
+          <div class="card-footer text-center " style="padding: 0px;">
+            <div class="btn-group" style="width:100%">
+              <button class="btn btn-md" type="button" style="width:50%"><input type="checkbox"> Compare</button>
+              <button class="btn btn-md" type="button" style="width:50%"
+                onclick="document.getElementById('heart') .style.color='red'">
+                <i class="fa fa-heart fa-1px" id="heart" style="padding: 0px 5px;"></i> Wishlist</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- card 2 -->
+      <div class="col">
+        <div class="card h-100 shadow-sm"> <img
+            src="https://www.reliancedigital.in/medias/Redgear-MS-150-WIRED-GAMINGACCESSORY-492579181-i-1-1200Wx1200H?context=bWFzdGVyfGltYWdlc3wxNTkyODV8aW1hZ2UvanBlZ3xpbWFnZXMvaDhhL2gzZi85NzM2NzYyOTgyNDMwLmpwZ3wwYzU1OWU4MDFiOGQ2MmE5MjlhMDZiZDVjOTM0MjIxNGRjMjQzZGUxMjQzOTFhMmY5ZTU4ZjUwZjZhZDgwOWQx"
+            class="card-img-top" alt="..." style="padding: 0px;">
+          <div class="card-body">
+            <div class="clearfix mb-3"> <span class="float-end price-hp" style="font-size: 30px;">
+                ₹999.00</span>
+            </div>
+            <h4 class="card-title">
+              Redgear MS-150 Wired Gamepad with Dual Intensity Vibration Motor, Black & Yellow</h4>
+            <div class="text-center my-4"> <a href="#" class="btn btn-warning">Buy Now</a> </div>
+          </div>
+          <div class="card-footer text-center " style="padding: 0px;">
+            <div class="btn-group" style="width:100%">
+              <button class="btn btn-md" type="button" style="width:50%"><input type="checkbox"> Compare</button>
+              <button class="btn btn-md" type="button" style="width:50%"
+                onclick="document.getElementById('heart') .style.color='red'">
+                <i class="fa fa-heart fa-1px" id="heart" style="padding: 0px 5px;"></i> Wishlist</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- card 3 -->
+      <div class="col">
+        <div class="card h-100 shadow-sm"> <img
+            src="https://www.reliancedigital.in/medias/Redgear-MS-150-WIRED-GAMINGACCESSORY-492579182-i-1-1200Wx1200H?context=bWFzdGVyfGltYWdlc3wxNTg5MTV8aW1hZ2UvanBlZ3xpbWFnZXMvaDE5L2gwYy85NzM2NzcwODQ2NzUwLmpwZ3xmNDE0NjE1NDU4MTI2NmM4NDMyOTVkNWVhODgxMjk2MTE4Mjk4NThhMTVlZjkwNzYzMGM4N2M3YWVkN2FmZmRi"
+            style="    width: 180px; position: relative; left: 80px;">
+          <div class="card-body">
+            <div class="clearfix mb-3"> <span class="float-end price-hp" style="font-size: 30px;">
+                ₹999.00</span>
+            </div>
+            <h4 class="card-title">
+              Redgear MS-150 Wired Gamepad with Dual Intensity Vibration Motor, Blood Red</h4>
+            <div class="text-center my-4"> <a href="#" class="btn btn-warning">Buy Now</a> </div>
+          </div>
+          <div class="card-footer text-center " style="padding: 0px;">
+            <div class="btn-group" style="width:100%">
+              <button class="btn btn-md" type="button" style="width:50%"><input type="checkbox"> Compare</button>
+              <button class="btn btn-md" type="button" style="width:50%"
+                onclick="document.getElementById('heart') .style.color='red'">
+                <i class="fa fa-heart fa-1px" id="heart" style="padding: 0px 5px;"></i> Wishlist</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+
+  <!-- cards end -->
+  <!-- about section end -->
+  <!-- product section start -->
+  <div class="product_section layout_padding">
+    <div class="container">
+      <div class="product_text">Other <span style="color: #5ca0e9;">products</span></div>
+      <p class="long_text">The Xbox setup experience is easier than ever before. All you need is a Microsoft account, a
+        broadband internet connection, HDMI-capable TV, and Xbox console.</p>
+      <div class="product_section_2">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="image_2" style="height: 309px;width: 282px;position: relative;left: 119px;top: -20px;">
+              <img src="images/g5.png">
+            </div>
+            <div class="price_text">Price $ <span style="color: #3a3a38;">499.99</span></div>
+            <h1 class="game_text">Playstation 5</h1>
+            <p class="long_text">The PlayStation 5 (PS5) is a home video game console developed by Sony Interactive
+              Entertainment. It was announced as the successor to the PlayStation 4 in April 2019, was launched on
+              November 12, 2020, in Australia, Japan, New Zealand, North America, and South Korea, and was released
+              worldwide one week later.</p>
+          </div>
+          <div class="col-md-6">
+            <div class="image_2" style="position:relative; left:40px"><img src="images/g6.png"></div>
+            <div class="price_text">Price $ <span style="color: #3a3a38;">300</span></div>
+            <h1 class="game_text">Playstation 4</h1>
+            <p class="long_text">The PlayStation 4 (abbreviated as PS4) is the successor to the PlayStation 3 and was
+              released in November 2013, in time for the Christmas holiday shopping season. It was announced on February
+              20, 2013. The console was shown on June 10th at E3 2013.</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="image_2" style="height: 309px;width: 196px;position: relative;left: 170px;top: -20px;">
+              <img src="images/g3.jpg">
+            </div>
+            <div class="price_text">Price $ <span style="color: #3a3a38;">169.99</span></div>
+            <h1 class="game_text">Xbox 360</h1>
+            <p class="long_text">The Xbox 360 is a home video game console developed by Microsoft. As the successor to
+              the original Xbox, it is the second console in the Xbox series. It competed with Sony's PlayStation 3 and
+              Nintendo's Wii as part of the seventh generation of video game consoles. It was officially unveiled on MTV
+              on May 12, 2005, with detailed launch and game information announced later that month at the 2005
+              Electronic Entertainment Expo (E3)</p>
+          </div>
+          <div class="col-md-6">
+            <div class="image_2" style="height: 308px;width: 265px;position: relative;left: 150px;"><img
+                src="images/g4.jpg"></div>
+            <div class="price_text">Price $ <span style="color: #3a3a38;">17.29</span></div>
+            <h1 class="game_text">CX40 Joystick</h1>
+            <p class="long_text">The Atari CX40 joystick was the first widely used cross-platform game controller. The
+              original CX10 was released with the Atari Video Computer System (later renamed the Atari 2600) in 1977 and
+              became the primary input device for most games on the platform. The CX10 was replaced after a year by the
+              simpler and less expensive CX40. The addition of the Atari joystick port to other platforms cemented its
+              popularity. It was the standard for the Atari 8-bit family of home computers and was compatible with the
+              VIC-20, Commodore 64, Commodore 128, MSX, and later the Atari ST and Amiga. Third-party adapters allowed
+              it to be used on other systems, such as the Apple II, TI-99/4A, and the ZX Spectrum.</p>
+          </div>
+        </div>
+      </div>
+      <div class="see_main">
+        <div class="see_bt"><a href="#">See More</a></div>
+      </div>
+    </div>
+  </div>
+  <!-- product section end -->
+  <!-- video section start -->
+  <!-- <div class="video_section layout_padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h1 class="video_text_2">3d video game</h1>
+          <h1 class="controller_text_2">remoto control</h1>
+          <p class="banner_text_2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud</p>
+          <div class="shop_bt"><a href="#">Shop Now</a></div>
+        </div>
+        <div class="col-md-6">
+          <div class="image_4"><img src="images/img-4.png"></div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+  <!-- video section end -->
+  <!-- testimonial section start -->
+  <div class="testimonial_section layout_padding">
+    <div class="container">
+      <h1 class="testimonial_text">Reviews</h1>
+
+      <div class="testimonial_section_2">
+        <div class="box_main">
+          <img src="3st-removebg.png" alt="" style="width:180px ; position: relative; left:-282px"><br>
+          <div class="quote_icon">
+            <i class="fa fa-quote-left" aria-hidden="true"></i>
+          </div>
+
+          <p class="dolor_text"> I'm happy with the controller and the deal I got from the company. I wanted a good
+            controller that did the basics, and the site recommended one that ticked all the boxes. Speaking with the
+            service team helped me get exactly what I was looking for.
+
+            The only reason not to give 5 stars is the fact that I had to separately claim for the offered cash back
+            deal, rather than it being automatic, and this info wasn't stated anywhere.<i class="fa fa-quote-right"
+              aria-hidden="true"></i></p>
+
+          <div class="client_main">
+            <div class="client_left">
+              <div class="images_5"><img src="images/img-5.png"></div>
+            </div>
+            <div class="client_right">
+              <h1 class="sandy_text">Sandy Delex</h1>
+              <p class="sandy_text_1">Customer</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="see_main">
+        <div class="see_bt"><a href="#">See More</a></div>
+      </div>
+    </div>
+  </div>
+  <!-- testimonial section end -->
+  <!-- contact section start -->
+  <div class="contact_section layout_padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="email_box">
+            <div class="input_main">
+              <div class="container">
+                <form action="/action_page.php">
+                  <h2 style="font-family: Arial, Helvetica, sans-serif;">Feedback</h2>
+                  <div class="form-group">
+                    <input type="text" class="email-bt" placeholder="Name" name="Name">
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="email-bt" placeholder="Email" name="Name">
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="email-bt" placeholder="Phone Number" name="Email">
+                  </div>
+                  <div class="form-group">
+                    <textarea class="massage-bt" placeholder="Message" rows="5" id="comment" name="Message"></textarea>
+                  </div>
+                </form>
+              </div>
+              <div class="main_bt"><a href="#">SEND</a></div>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="col-md-6">
+          <div class="image_6"><img src="images/img-6.png"></div>
+        </div> -->
+      </div>
+    </div>
+  </div>
+  <!-- contact section end -->
+  <!-- footer section start -->
+  <div class="section_footer ">
+    <div class="container">
+      <div class="footer_section_2">
+        <div class="row">
+          <div class="col-sm-6 col-md-6 col-lg-3">
+            <h2 class="account_text">About Us</h2>
+            <p class="ipsum_text_2">Gaming controllers are an essential accessory for avid gamers, providing more
+              precision and control than a keyboard and mouse.If you’re looking for the perfect controllers to elevate
+              your gaming
+              experience, look no further than Gamepad Store!</p>
+          </div>
+          <div class="col-sm-6 col-md-6 col-lg-3">
+            <h2 class="account_text">Useful Link</h2>
+            <div class="useful_link">
+              <ul>
+                <li><a href="#">Video games</a></li>
+                <li><a href="#">Remote control</a></li>
+                <li><a href="#">3d controller</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-6 col-lg-3">
+            <h2 class="account_text">Contact Us</h2>
+            <p class="ipsum_text_2">Paritosh Sandhan - <a href="#">+91992180****</a></p>
+            <p class="ipsum_text_2">Sahil Gaikwad - <a href="#">+917058147****</a></p>
+          </div>
+          <div class="col-sm-6 col-md-6 col-lg-3">
+            <h2 class="account_text text-allign-left">Premium Membership</h2>
+            <input type="" class="email_text" placeholder="Enter Your Email" name="Enter Your Email">
+            <button class="subscribr_bt">SUBSCRIBE</button>
+          </div>
+        </div>
+      </div>
+      <div class="social_icon">
+        <ul>
+          <li><a href="https://www.facebook.com/" target="_blank" id="face"><img src="images/fb-icon.png"></a></li>
+          <li><a href="https://twitter.com/home?lang=en" target="_blank"><img src="images/twitter-icon.png"></a></li>
+          <li><a href="https://www.linkedin.com/hp" target="_blank"><img src="images/linkdin-icon.png"></a></li>
+          <li><a href="https://www.instagram.com/_sahil_gaikwad_official/" target="_blank"><img
+                src="images/instagram-icon.png"></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- footer section end -->
+  <!-- copyright section start -->
+  <div class="copyright_section">
+    <div class="container">
+      <p class="copyright_text" style="padding-top: 8px;">Copyright 2020 All Right Reserved By Gamepad Store
+      </p>
+    </div>
+  </div>
+
+  <!-- copyright section end -->
+  <!-- Javascript files-->
+  <script src="js/jquery.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/jquery-3.0.0.min.js"></script>
+  <script src="js/plugin.js"></script>
+  <!-- sidebar -->
+  <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="js/custom.js"></script>
+  <!-- javascript -->
+  <script src="js/owl.carousel.js"></script>
+  <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $(".fancybox").fancybox({
+        openEffect: "none",
+        closeEffect: "none"
+      });
+    })
+  </script>
+</body>
+
+</html>
